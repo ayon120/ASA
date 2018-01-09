@@ -1,0 +1,456 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<link href="~/Content/Book.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+
+	<!--FOR DROPDOWN MENU-->
+	<script type="text/javascript">
+$(document).ready(function () {
+			$(".menu-item").click(function () {
+
+
+				$(this).find(".sub-menu").slideDown('fast').show();
+
+				$(this).hover(function () {
+				}, function () {
+					$(this).find(".sub-menu").slideUp('slow');
+				});
+
+
+			}).hover(function () {
+				$(this).addClass("subhover");
+			}, function () {
+				$(this).removeClass("subhover");
+			});
+		});
+
+	</script>
+
+	<!--FOR HIDE AND SHOW BOOKS DIV-->
+
+	<script type="text/javascript">
+	$(document).ready(function () {
+		$("#courseLab").click(function () {
+			$("#showBook1").show("slow");
+			$("#showBook2").hide("slow");
+		});
+		$("#courseTheory").click(function () {
+			$("#showBook2").show("slow");
+			$("#showBook1").hide("slow");
+		});
+
+		$("#courseLab2").click(function () {
+			$("#showBook1").show("slow");
+			$("#showBook2").hide("slow");
+		});
+		$("#courseTheory2").click(function () {
+			$("#showBook2").show("slow");
+			$("#showBook1").hide("slow");
+		});
+
+
+	});
+
+	</script>
+	<title>Previous Questions</title>
+
+</head>
+<body>
+
+	<div class="header">
+
+		<a href="#" id="open">
+			<span class="glyphicon glyphicon-menu-hamburger"></span>
+		</a>
+
+	</div>
+
+
+	<!--SIDE BAR MENU Start-->
+
+	<div id="wrapper">
+
+
+		<div id="sidebar-wrapper" class="sidebar">
+			<ul class="sidebar-nav">
+				<li><a href="Login">  <span class="glyphicon glyphicon-home"></span>  Home</a></li>
+				<li><a href="contact">  <span class="glyphicon glyphicon-phone-alt"></span>  Contact</a></li>
+				<li><a href="#">  <span class="glyphicon glyphicon-user"></span> About</a></li>
+				<li class="settings"><a href="#">  <span class="glyphicon glyphicon-cog"></span>  Settings</a></li>
+
+			</ul>
+		</div>
+
+	</div>
+
+	<script>
+		$('#open').click(function () {
+			$('.sidebar').toggleClass('active')
+		})
+
+		$(document).click(function (e) {
+			var sidebar = $(".sidebar, #open");
+			if (!sidebar.is(e.target) && sidebar.has(e.target).length === 0) {
+				sidebar.removeClass('active')
+			}
+		});
+
+	</script>
+
+	<!--WEB NAME LOGO-->
+
+	<div class="webname">
+
+		<a href="homepage"><img src="~/Content/images/logo.jpg"></a>
+
+
+	</div>
+
+	<!--SEARCH BAR-->
+
+	<div class="search">
+
+		<form>
+
+			<div class="input-group">
+				<input type="text" name="search" class="form-control" placeholder="Search">
+				<div class="input-group-btn">
+					<button class="btn btn-danger" type="submit"> <i class="glyphicon glyphicon-search"></i></button>
+
+				</div>
+
+			</div>
+		</form>
+	</div>
+
+
+
+	<div class="userInfo">
+		<div id="dp">
+			<!--<a href="#"><img src="~/Content/images/dp.jpg"></a> -->
+		</div>
+
+		<div id="infomenu">
+
+			<div class="dropdown">
+				<a href="#" class=" dropdown-toggle" data-toggle="dropdown">
+					<span class="glyphicon glyphicon-triangle-bottom"></span>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="#">Profile</a></li>
+					<li><a href="#">Settings</a></li>
+					<li><a href="homepage">logout</a></li>
+				</ul>
+			</div>
+
+		</div>
+
+		<div id="info">
+
+
+		</div>
+
+		<div id="qa">
+			<div class="tooltip"><span class="tooltiptext">Ques Answer forum</span></div>
+
+		</div>
+	</div>
+
+	<div id="mainbody">
+
+		<div id="intro">
+			<h4 class="text-center">Welcome To Aust Student Assistance</h4>
+			<h3 class="text-center">Book Manager</h3>
+		</div>
+
+		<nav class="main-nav">
+			<ul class="main-nav-ul">
+				<li class="has-sub menu-item">
+					<a href="#"><span class="sub-row"></span><span class="glyphicon glyphicon-book"></span>   CSE 3200 </a>
+					<ul class="sub-menu">
+						<li id="courseLab"><a href="#"><span class="glyphicon glyphicon-file"></span>  Fall 16</a></li>
+						<li class="divider"></li>
+						<li id="courseTheory"><a href="#"><span class="glyphicon glyphicon-file"></span>  Spring 17</a></li>
+						<li id="courseTheory"><a href="#"><span class="glyphicon glyphicon-file"></span>  Fall 17</a></li>
+
+
+					</ul>
+				</li>
+
+				<li class="has-sub menu-item">
+					<a href="#"><span class="sub-arrow"></span><span class="glyphicon glyphicon-book"></span>   CSE 3203 </a>
+					<ul class="sub-menu">
+						<li id="courseLab2"><a href="#"><span class="glyphicon glyphicon-file"></span>  lab</a></li>
+						<li id="courseTheory2"><a href="#"><span class="glyphicon glyphicon-file"></span>  Theory</a></li>
+
+					</ul>
+				</li>
+
+				<li class="has-sub menu-item">
+					<a href="#"><span class="sub-row"></span><span class="glyphicon glyphicon-book"></span>  CSE 3204 </a>
+					<ul class="sub-menu">
+						<li id="courseLab"><a href="#"><span class="glyphicon glyphicon-file"></span>  Fall 16</a></li>
+						<li class="divider"></li>
+						<li id="courseTheory"><a href="#"><span class="glyphicon glyphicon-file"></span>  Spring 17</a></li>
+						<li id="courseTheory"><a href="#"><span class="glyphicon glyphicon-file"></span>  Fall 17</a></li>
+
+
+					</ul>
+				</li>
+				<li class="has-sub menu-item">
+					<a href="#"><span class="sub-row"></span><span class="glyphicon glyphicon-book"></span>  CSE 3223 </a>
+					<ul class="sub-menu">
+						<li id="courseLab"><a href="#"><span class="glyphicon glyphicon-file"></span>  Fall 16</a></li>
+						<li class="divider"></li>
+						<li id="courseTheory"><a href="#"><span class="glyphicon glyphicon-file"></span>  Spring 17</a></li>
+						<li id="courseTheory"><a href="#"><span class="glyphicon glyphicon-file"></span>  Fall 17</a></li>
+
+
+					</ul>
+				</li>
+				<li class="has-sub menu-item">
+					<a href="#"><span class="sub-row"></span><span class="glyphicon glyphicon-book"></span>  CSE 3224 </a>
+					<ul class="sub-menu">
+						<li id="courseLab"><a href="#"><span class="glyphicon glyphicon-file"></span>  lab</a></li>
+						<li id="courseTheory"><a href="#"><span class="glyphicon glyphicon-file"></span>  Theory</a></li>
+
+					</ul>
+				</li>
+				<li class="has-sub menu-item">
+					<a href="#"><span class="sub-row"></span><span class="glyphicon glyphicon-book"></span>  CSE 3208 </a>
+					<ul class="sub-menu">
+						<li id="courseLab"><a href="#"><span class="glyphicon glyphicon-file"></span>  lab</a></li>
+						<li id="courseTheory"><a href="#"><span class="glyphicon glyphicon-file"></span>  Theory</a></li>
+
+					</ul>
+				</li>
+				<li id="home"><a href="Book"><span class="glyphicon glyphicon-home"></span>  Home</a></li>
+
+			</ul>
+		</nav>
+
+
+
+		<div id="showBook1">
+
+			<div id="bookHeader">
+
+				<div id="coursetitle">
+					<h3 class="text-center">CSE 3200</h3>
+					<h4 class="text-center">Software Development Lab IV</h4>
+
+				</div>
+
+			</div>
+
+			<center>
+
+				<table class="table" width="750px" align="centre">
+
+
+
+					<tr>
+						<td>Software Development Iv</td>
+						<td>By ABC <em>Jan 6,2018</em></td>
+						<td id="dl">
+							<a href="#" class="btn btn-info">
+								<span class="glyphicon glyphicon-download-alt"></span> Download
+							</a>
+						</td>
+
+
+					</tr>
+					<tr>
+						<td>MSD LAB BOOK</td>
+						<td>BY ABC <em>Jan 5,2018</em></td>
+						<td>
+							<a href="#" class="btn btn-info">
+								<span class="glyphicon glyphicon-download-alt"></span> Download
+							</a>
+						</td>
+
+
+					</tr>
+					<tr>
+						<td>Operating System Lab</td>
+						<td>BY DEF <em>Jan 5,2018</em></td>
+						<td>
+							<a href="#" class="btn btn-info">
+								<span class="glyphicon glyphicon-download-alt"></span> Download
+							</a>
+						</td>
+
+
+					</tr>
+					<tr>
+						<td>ISD LAB</td>
+						<td>By DEF <em>jan 4,2018</em></td>
+						<td>
+							<a href="#" class="btn btn-info">
+								<span class="glyphicon glyphicon-download-alt"></span> Download
+							</a>
+						</td>
+
+
+					</tr>
+
+
+
+				</table>
+
+			</center>
+
+
+
+
+		</div>
+
+
+		<div id="showBook2">
+
+			<div id="bookHeader">
+
+				<div id="coursetitle">
+					<h3 class="text-center">CSE 3200</h3>
+					<h4 class="text-center">Information System Design</h4>
+
+				</div>
+
+			</div>
+
+
+			<center>
+
+				<table class="table" width="750px" align="centre">
+
+
+
+					<tr>
+						<td>Data Coomunication.pdf</td>
+						<td>By ABC <em>Jan 6,2018</em></td>
+						<td id="dl">
+							<a href="#" class="btn btn-info">
+								<span class="glyphicon glyphicon-download-alt"></span> Download
+							</a>
+						</td>
+
+
+					</tr>
+					<tr>
+						<td>InforMation System Dsign Kendal.pdf</td>
+						<td>BY ABC <em>Jan 5,2018</em></td>
+						<td>
+							<a href="#" class="btn btn-info">
+								<span class="glyphicon glyphicon-download-alt"></span> Download
+							</a>
+						</td>
+
+
+					</tr>
+					<tr>
+						<td>Micontrollerbased System Design</td>
+						<td>BY DEF <em>Jan 5,2018</em></td>
+						<td>
+							<a href="#" class="btn btn-info">
+								<span class="glyphicon glyphicon-download-alt"></span> Download
+							</a>
+						</td>
+
+
+					</tr>
+					<tr>
+						<td>Operating System concept</td>
+						<td>By DEF <em>jan 4,2018</em></td>
+						<td>
+							<a href="#" class="btn btn-info">
+								<span class="glyphicon glyphicon-download-alt"></span> Download
+							</a>
+						</td>
+
+
+					</tr>
+
+
+
+				</table>
+
+			</center>
+
+
+
+		</div>
+	</div>
+
+
+	<!--Down Info-->
+
+
+
+	<div class="downinfo">
+
+		<div id="col-1" class="text-center">
+
+			<h3>Why ASA</h3>
+			<ul>
+				<li>All study material in one place</li>
+				<br />
+				<li>Open for all</li>
+				<br />
+				<li>Exam, Assignment, academic notices... all study materials</li>
+			</ul>
+
+
+		</div>
+
+		<div id="col-2" class="text-center">
+
+			<h3>More at ASA</h3>
+			<ul>
+				<li>Important Blogs of Teachers</li>
+				<br />
+				<li>All Useful Links</li>
+			</ul>
+
+
+		</div>
+
+		<div class="col-3">
+			<h3>Contact Us</h3>
+			<ul>
+				<li><span>Email :</span> asa@gmail.com</li>
+				<br />
+				<li><span>Phone :</span> 01673304886</li>
+			</ul>
+		</div>
+	</div>
+
+
+	<!--FOOTER START -->
+
+	<div class="footer">
+
+		<footer>
+			<div id="f1">
+				Aust Student Assistance 2017 &copy; All right reserved.
+			</div>
+
+			<a href="#" class="fa fa-facebook"></a>
+			<a href="#" class="fa fa-twitter"></a>
+			<a href="#" class="fa fa-google"></a>
+			<a href="#" class="fa fa-linkedin"></a>
+			<a href="#" class="fa fa-youtube"></a>
+		</footer>
+
+	</div>
+
+</body>
+</html>
+

@@ -6,6 +6,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="~/Content/HomeStyle.css" rel="stylesheet" type="text/css" >
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 
@@ -14,7 +15,26 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+	
+	<script type="text/javascript">
+		$(document).ready(function () {
 
+
+
+			$("#radio2").click(function () {
+				$("#loginModal").modal('hide');
+				$("#loginModal5").modal('show');
+			});
+
+
+		
+	</script>
+
+
+
+
+
+	
 
 </head>
 
@@ -23,7 +43,9 @@
 
 			<div class="header">
 
-				<a href="#" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
+				<a href="#" id="open">
+				<span class="glyphicon glyphicon-menu-hamburger"></span>
+				</a>
 
 			</div>
        
@@ -33,22 +55,40 @@
 	<div id="wrapper">
 
 
-		<div id="sidebar-wrapper">
+		<div id="sidebar-wrapper" class="sidebar">
 			<ul class="sidebar-nav">
-				<li><a href="homepage"> <span class="glyphicon glyphicon-home"></span> Home</a></li>
-				<li><a href="contact"> <span class="glyphicon glyphicon-phone-alt"></span> Contact</a></li>
-				<li><a href="#"> <span class="glyphicon glyphicon-user"></span> About</a></li>
-				<li class="settings"><a href="#"> <span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+				<li><a href="homepage">  <span class="glyphicon glyphicon-home"></span>  Home</a></li>
+				<li><a href="contact">  <span class="glyphicon glyphicon-phone-alt"></span>  Contact</a></li>
+				<li><a href="#">  <span class="glyphicon glyphicon-user"></span> About</a></li>
+				<li class="settings"><a href="#">  <span class="glyphicon glyphicon-cog"></span>  Settings</a></li>
 
 			</ul>
 		</div>
 
+	</div>
+
 		<script>
+			$('#open').click(function () {
+				$('.sidebar').toggleClass('active')
+			})
+
+			$(document).click(function (e) {
+				var sidebar = $(".sidebar, #open");
+				if (!sidebar.is(e.target) && sidebar.has(e.target).length === 0) {
+					sidebar.removeClass('active')
+				}
+			});
+
+		</script>
+
+		<!--<script>
 			$("#menu-toggle").click(function (e) {
 				e.preventDefault();
 				$("#wrapper").toggleClass("menuDisplayed");
 			});
-		</script>
+		</script> -->
+
+		
 
 
 		<!--WEB NAME LOGO-->
@@ -94,6 +134,12 @@
 					$("#loginModal").modal('show');
 				});
 
+
+				$("#signup").click(function () {
+					$("#signupModal").modal('hide');
+					$("#loginModal").modal('show');
+				});
+
 			});
 		</script>
 
@@ -101,7 +147,12 @@
 
 		<div class="loginbox">
 
-			<button id="btnlogin" class="btn btn-danger" type="button" data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-log-in"></span> LogIn</button>
+	
+				<button id="btnlogin" class="btn btn-danger" type="button" data-toggle="modal" data-target="#loginModal">
+					<span class="glyphicon glyphicon-log-in"></span>
+					LogIn
+				</button>
+		
 
 
 
@@ -112,15 +163,20 @@
 					<!-- Modal content-->
 					<div class="modal-content">
 						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal">&times;</button>
-							<h4 class="modal-title">Log In To Pickachoo to Shop Harder!!</h4>
+							<button color="white" type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Log In To ASA</h4>
 						</div>
 						<div class="modal-body">
 
 							<form id="login-box" method="post" action="">
 								<div class="log">
 
-
+									<div class="radio" id="radio1">
+										<a href="Teacher"><label><input type="radio" name="optradio">As Teacher</label></a>
+									</div>
+									<div class="radio" id="radio2">
+										<label><input type="radio" name="optradio">As Student</label>
+									</div>
 
 									<input type="text" name="email" placeholder="E-mail" /> <br>
 									<input type="password" name="password" placeholder="Password" /> <br>
@@ -128,9 +184,11 @@
 									<div class="checkbox">
 										<label><input type="checkbox" name="remember"> Remember me</label>
 									</div>
-									<input type="submit" class="btn btn-danger" name="submit" value="Login" />
+									<!--<input type="submit" class="btn btn-danger" name="submit" value="Login" /> -->
 
-									<h1>New to Pickachoo? Then...</h1>
+									<a id="lg"class="btn btn-danger" type="button" href="Login">Login</a>
+
+									<h1>New to ASA? Then...</h1>
 									<button id="gotosignup" type="button" class="btn btn-danger">Signup</button>
 
 								</div>
@@ -149,6 +207,7 @@
 			</div>
 		</div>
 
+
 		<!-- SIGN UP MODAL START -->
 
 		<div class="registerbox">
@@ -162,7 +221,7 @@
 					<div class="modal-content">
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal">&times;</button>
-							<h4 class="modal-title">SignUp For Pickachoo</h4>
+							<h4 class="modal-title">SignUp For ASA</h4>
 						</div>
 						<div class="modal-body">
 
@@ -175,7 +234,7 @@
 									<input type="password" name="password" placeholder="Password" />
 									<input type="text" name="phone" placeholder="Phone" />
 
-									<input type="submit" class="btn btn-danger" name="submit" value="SIGN ME UP" />
+									<input id="signup" type="submit" class="btn btn-danger" name="submit" value="SIGN ME UP" />
 									<p>Already Have an Account?</p>
 
 
@@ -199,7 +258,7 @@
 
 
 		<!--Slider start-->
-		<div id="page-content-wrapper">
+		<!--<div id="page-content-wrapper"> -->
 
 			<div class="container">
 
@@ -225,18 +284,30 @@
 					<div class="carousel-inner">
 
 						<div class="item active">
-							<img src="~/Content/images/7.jpg">
+							<img src="~/Content/images/aust.jpg">
+							<div class="carousel-caption">
+								<div id="headline"><h3 class="text-center"><strong>Welcome To Aust Student Assistance</strong> </h3></div>
+								<p><strong>-a website to assist students</strong> </p>
+							</div>
 
 						</div>
 
 
 						<div class="item ">
-							<img src="~/Content/images/8.jpg">
+							<img src="~/Content/images/b3.jpg">
+							<div class="carousel-caption">
+								<h3><strong>Open For All</strong></h3>
+								<p><strong>-AUST CSE students</strong></p>
+							</div>
 
 						</div>
 
 						<div class="item">
-							<img src="~/Content/images/7.jpg">
+							<img src="~/Content/images/b4.jpg">
+							<div class="carousel-caption">
+								<h3>All Resources In One Place</h3>
+								<p><strong>-a platform of important documents </strong></p>
+							</div>
 
 						</div>
 
@@ -258,27 +329,77 @@
 
 				</div>
 			</div>
-		</div>
+	
 
 
 
-		<div id="page-content-wrapper">
-			<div class="mainbody">
+		
+			<div id="mainbody">
 
-				
-
+			<button class="btn btn-danger btn-lg">GET STARTED</button>
 
 
 			</div>
+		
+
+
+
+	<!--Down Info-->
+
+
+
+	<div class="downinfo">
+
+		<div id="col-1" class="text-center">
+
+			<h3>Why ASA</h3>
+			<ul>
+				<li>All study material in one place</li> <br />
+				<li>Open for all</li><br />
+				<li>Exam, Assignment, academic notices... all study materials</li>
+			</ul>
+
+
 		</div>
 
+		<div id="col-2" class="text-center">
+
+			<h3>More at ASA</h3>
+			<ul>
+				<li>Important Blogs of Teachers</li> <br />
+				<li>All Useful Links</li>
+			</ul>
+
+
+		</div>
+
+		<div class="col-3">
+			<h3>Contact Us</h3>
+			<ul>
+				<li><span>Email :</span> asa@gmail.com</li> <br />
+				<li><span>Phone :</span> 01673304886</li>
+			</ul>
+		</div>
 	</div>
+
+
+	
 
 			<!--FOOTER START -->
 
 			<div class="footer">
 
-				<footer></footer>
+				<footer>
+					<div id="f1">
+						Aust Student Assistance 2017 &copy; All right reserved.
+					</div>
+
+					<a href="#" class="fa fa-facebook"></a>
+					<a href="#" class="fa fa-twitter"></a>
+					<a href="#" class="fa fa-google"></a>
+					<a href="#" class="fa fa-linkedin"></a>
+					<a href="#" class="fa fa-youtube"></a>
+				</footer>
 
 			</div>
 

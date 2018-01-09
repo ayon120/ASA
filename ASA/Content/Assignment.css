@@ -1,0 +1,476 @@
+﻿
+body {
+	background-image: url(images/bg.jpg);
+}
+
+.search {
+	width: 350px;
+	margin-left: 485px;
+	position: absolute;
+	margin-top: -705px;
+}
+
+.glyphicon-search {
+	font-size: 15px;
+}
+
+
+
+input[type=text]:focus {
+	width: 520px;
+}
+
+
+.header {
+	height: 70px;
+	background: #00664b;
+	width: 100%;
+}
+
+
+
+.settings {
+	margin-top: 400px;
+	position: relative;
+}
+
+.sidebar {
+	transform: translateX(-120%);
+	height: 100vh;
+	transition: 0;
+	width: 250px;
+	background: #2C3E50;
+	opacity: 1;
+	z-index: 1;
+}
+
+.active {
+	transform: translateX(0);
+}
+
+.header a span {
+	color: white;
+	font-size: 20px;
+	margin-top: 25px;
+	margin-left: 20px;
+}
+
+.sidebar span {
+	margin-left: 20px;
+}
+
+
+
+
+/* ul styling*/
+.sidebar-nav {
+	padding: 0;
+	list-style: none;
+}
+
+	.sidebar-nav li {
+		line-height: 40px;
+	}
+
+		.sidebar-nav li a {
+			display: block;
+			text-decoration: none;
+			color: #ddd;
+		}
+
+			.sidebar-nav li a:hover {
+				background: #16A085;
+			}
+
+.webname {
+	float: left;
+	height: 60px;
+	width: 250px;
+	position: absolute;
+	margin-top: -725px;
+	margin-left: 50px;
+	transition: 0.3s transform;
+}
+
+	.webname:hover {
+		transform: rotateY(180deg);
+	}
+
+
+#dp {
+	margin-left: 1100px;
+	float: left;
+	margin-top: -715px;
+	position: absolute;
+	border-radius: 50%;
+	background-image: url(images/dp.jpg);
+	height: 50px;
+	width: 60px;
+}
+
+#qa {
+	margin-left: 1200px;
+	float: left;
+	margin-top: -715px;
+	position: absolute;
+	border-radius: 50%;
+	background-image: url(images/qa.png);
+	height: 50px;
+	width: 60px;
+}
+
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+	visibility: hidden;
+	width: 120px;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+	/* Position the tooltip text - see examples below! */
+	position: absolute;
+	z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+#qa.tooltip:hover .tooltiptext {
+	visibility: visible;
+}
+
+#infomenu {
+	margin-left: 1145px;
+	float: left;
+	margin-top: -695px;
+	position: absolute;
+	color: white;
+	z-index: 1;
+}
+
+	#infomenu a span {
+		color: white;
+		font-size: 13px;
+	}
+
+#info {
+	margin-left: 1180px;
+	float: left;
+	margin-top: 50px;
+	position: absolute;
+	color: white;
+	z-index: 1;
+	border-radius: 50%;
+	background-color: red;
+}
+
+#mainbody {
+	height: 600px;
+	width: 1000px;
+	margin-left: 180px;
+	margin-top: -600px;
+	background-image: url(images/bookbg.jpg);
+}
+
+
+
+	#mainbody #sidebar-wrapper {
+		position: absolute;
+		width: 250px;
+		height: 600px;
+		background: #2C3E50;
+		margin-left: 00px;
+	}
+
+	#mainbody .sidebar-nav {
+		padding: 0;
+		list-style: none;
+		color: white;
+	}
+
+.sidebar-nav .dropdown .dropdown-menu {
+	list-style: none;
+	color: black;
+}
+
+.dropdown-menu:hover {
+	display: block;
+}
+
+#mainbody .sidebar-nav li ul li {
+	line-height: 40px;
+	color: white;
+}
+
+.sidebar-nav .dropdown .dropdown-menu li {
+	display: block;
+	text-decoration: none;
+	color: blue;
+}
+
+.dropdown-menu li :hover {
+	background: #16A085;
+}
+
+.dropdown span {
+	margin-left: 20px;
+}
+
+.dd span {
+	margin-left: 40px;
+}
+/*DROPDOWN*/
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+.main-nav {
+	width: 250px;
+	background-color: #1a1a1a;
+	height: 600px;
+	opacity: .95;
+}
+
+	.main-nav a {
+		text-decoration: none;
+		display: block;
+		padding: 10px 0 10px 20px;
+		color: white;
+		text-transform: uppercase;
+		letter-spacing: .2em;
+	}
+
+		.main-nav a:hover {
+			color: white;
+		}
+
+	.main-nav ul {
+		list-style: none;
+		text-decoration: none;
+	}
+
+#home {
+	margin-top: 200px;
+	position: relative;
+}
+
+.sub-menu {
+	display: none;
+	margin-left: 50px;
+	list-style: none;
+}
+
+#showBook1 {
+	margin-left: 250px;
+	height: 600px;
+	width: 750px;
+	background-image: url(images/bb1.jpg);
+	margin-top: -600px;
+	z-index: 1;
+	position: absolute;
+	display: none;
+}
+
+#showBook2 {
+	margin-left: 250px;
+	height: 600px;
+	width: 750px;
+	background-image: url(images/bb1.jpg);
+	margin-top: -600px;
+	z-index: 1;
+	position: absolute;
+	display: none;
+}
+
+#intro {
+	margin-left: 500px;
+	margin-top: 70px;
+	position: absolute;
+}
+
+	#intro h3, #intro h4 {
+		color: white;
+		text-shadow: 2px 2px 4px blue;
+	}
+
+#bookHeader {
+	height: 200px;
+	width: 750px;
+	background-image: url(images/lib.jpg);
+}
+
+#coursetitle {
+	height: 100px;
+	width: 200px;
+	z-index: 1;
+	position: absolute;
+	background-image: url(images/bb3.jpg);
+	margin-left: 250px;
+	margin-top: 20px;
+}
+
+	#coursetitle h3, #coursetitle h4 {
+		color: white;
+		text-shadow: 2px 2px 4px blue;
+	}
+
+table {
+	position: relative;
+	border-collapse: collapse;
+}
+
+th {
+	color: white;
+	background-color: #006633;
+	height: 35px;
+}
+
+td {
+	text-align: center;
+	column-width: 50px;
+	color: white;
+}
+
+#dl {
+	margin-left: 40px;
+}
+
+
+/*Down info*/
+
+.downinfo {
+	background-color: #262626;
+	height: 400px;
+	margin-top: 200px;
+}
+
+#col-1 {
+	margin-left: 50px;
+	display: inline-block;
+	position: absolute;
+	margin-top: 70px;
+}
+
+	#col-1 h3 {
+		color: white;
+		text-shadow: 2px 2px 4px blue;
+	}
+
+	#col-1 ul {
+		margin-top: 30px;
+	}
+
+
+		#col-1 ul li {
+			color: white;
+			list-style: none;
+			border-bottom: dotted 1px grey;
+		}
+
+#col-2 {
+	margin-left: 580px;
+	float: left;
+	position: absolute;
+	margin-top: 70px;
+}
+
+	#col-2 h3 {
+		color: white;
+		text-shadow: 2px 2px 4px blue;
+	}
+
+	#col-2 ul {
+		margin-top: 30px;
+		margin-left: -40px;
+		position: absolute;
+	}
+
+		#col-2 ul li {
+			color: white;
+			list-style: none;
+			border-bottom: dotted 1px grey;
+		}
+
+.col-3 {
+	margin-left: 960px;
+	float: left;
+	position: absolute;
+	margin-top: 70px;
+}
+
+	.col-3 h3 {
+		color: white;
+		text-shadow: 2px 2px 4px blue;
+	}
+
+	.col-3 ul {
+		margin-top: 30px;
+		margin-left: -40px;
+	}
+
+		.col-3 ul li {
+			color: white;
+			list-style: none;
+			border-bottom: dotted 1px grey;
+		}
+
+
+
+footer {
+	font-size: 20px;
+	padding: 1em;
+	text-align: center;
+	background-color: #4d4d4d;
+	text-align: left;
+	width: 100%;
+}
+
+#f1 {
+	display: inline-block;
+	font-size: 18px;
+	color: white;
+	text-shadow: 2px 2px 4px blue;
+}
+
+.fa {
+	display: inline-block;
+	float: right;
+	font-size: 30px;
+	width: 28px;
+	padding: 6px;
+	margin-right: 5px;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 60%;
+}
+
+	.fa:hover {
+		opacity: 2;
+	}
+
+.fa-facebook {
+	background: #3B5998;
+	color: white;
+}
+
+.fa-twitter {
+	background: #55ACEE;
+	color: white;
+}
+
+.fa-google {
+	background: #dd4b39;
+	color: white;
+}
+
+.fa-linkedin {
+	background: #007bb5;
+	color: white;
+}
+
+.fa-youtube {
+	background: #bb0000;
+	color: white;
+}

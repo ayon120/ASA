@@ -1,0 +1,49 @@
+﻿body {
+}
+
+
+.header {
+	height: 70px;
+	background: #00664b;
+	width: 100%;
+}
+
+.sidebar {
+	transform: translateX(-120%);
+	height: 100vh;
+	transition: 0;
+	width: 250px;
+	background: #2C3E50;
+	opacity: .83;
+	z-index: 1;
+}
+
+.active {
+	transform: translateX(0);
+}
+
+.header a span {
+	color: white;
+	font-size: 20px;
+	margin-top: 25px;
+	margin-left: 20px;
+}
+
+.webname {
+	float: left;
+	height: 60px;
+	width: 250px;
+	position: absolute;
+	margin-top: -70px;
+	margin-left: 50px;
+	transition: 0.3s transform;
+}
+
+	.webname:hover {
+
+		transform:rotate(360deg);
+	}
+
+.sidebar span {
+	margin-left: 20px;
+}

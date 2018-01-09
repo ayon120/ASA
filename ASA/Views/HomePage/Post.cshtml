@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Post</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="~/Content/post.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+
+	<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+
+
+</head>
+
+<body>
+
+
+	<div class="header">
+
+		<a href="#" id="open">
+			<span class="glyphicon glyphicon-menu-hamburger"></span>
+		</a>
+
+	</div>
+
+
+	<!--SIDE BAR MENU Start-->
+
+	<div id="wrapper">
+
+
+		<div id="sidebar-wrapper" class="sidebar">
+			<ul class="sidebar-nav">
+				<li><a href="homepage">  <span class="glyphicon glyphicon-home"></span>  Home</a></li>
+				<li><a href="contact">  <span class="glyphicon glyphicon-phone-alt"></span>  Contact</a></li>
+				<li><a href="#">  <span class="glyphicon glyphicon-user"></span> About</a></li>
+				<li class="settings"><a href="#">  <span class="glyphicon glyphicon-cog"></span>  Settings</a></li>
+
+			</ul>
+		</div>
+
+	</div>
+
+	<script>
+		$('#open').click(function () {
+			$('.sidebar').toggleClass('active')
+		})
+
+		$(document).click(function (e) {
+			var sidebar = $(".sidebar, #open");
+			if (!sidebar.is(e.target) && sidebar.has(e.target).length === 0) {
+				sidebar.removeClass('active')
+			}
+		});
+
+	</script>
+
+	<!--<script>
+		$("#menu-toggle").click(function (e) {
+			e.preventDefault();
+			$("#wrapper").toggleClass("menuDisplayed");
+		});
+	</script> -->
+	<!--WEB NAME LOGO-->
+
+	<div class="webname">
+
+		<a href="homepage"><img src="~/Content/images/logo.jpg"></a>
+
+
+	</div>
+
+	<!--SEARCH BAR-->
+
+	<div class="search">
+
+		<form>
+
+			<div class="input-group">
+				<input type="text" name="search" class="form-control" placeholder="Search">
+				<div class="input-group-btn">
+					<button class="btn btn-danger" type="submit"> <i class="glyphicon glyphicon-search"></i></button>
+
+				</div>
+
+			</div>
+		</form>
+	</div>
+
+
+	<div class="userInfo">
+		<div id="dp">
+			<!--<a href="#"><img src="~/Content/images/dp.jpg"></a> -->
+		</div>
+
+		<div id="infomenu">
+
+			<div class="dropdown">
+				<a href="#" class=" dropdown-toggle" data-toggle="dropdown">
+					<span class="glyphicon glyphicon-triangle-bottom"></span>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="#">Profile</a></li>
+					<li><a href="#">Settings</a></li>
+					<li><a href="homepage">logout</a></li>
+				</ul>
+			</div>
+
+		</div>
+
+		<div id="info">
+
+
+		</div>
+
+		<div id="qa">
+			<div class="tooltip"><span class="tooltiptext">Ques Answer forum</span></div>
+
+		</div>
+	</div>
+
+	<div class="mainbody">
+		<div class="container my-3">
+			<nav class="breadcrumb">
+				<a href="#0" class="breadcrumb-item">Category/</a>
+				<a href="#0" class="breadcrumb-item">Topic Name/</a>
+				<span class="breadcrumb-item active">Post a question</span>
+			</nav>
+			<div class="row">
+				<div class="col-12"></div>
+				<h3 class="create-post">
+					Create new post
+				</h3>
+				<form class="mb-3">
+					<div class="form-group">
+						<label for="topic">
+							Topic;
+						</label>
+						<input type="text" class="form-control" id="topic" placeholder="write your comment here" required />
+					</div>
+					<div class="form-group">
+						<label for="comment">Comment</label>
+						<textarea class="form-control" id="comment" rows="10" placeholder="write your comment here" required></textarea>
+					</div>
+					<div class="form-check">
+						<label class="form-check-label">
+							<input type="checkbox" class="form-check-input" id="checkbox" value="notification" />Notify me upon replies
+						</label>
+					</div>
+					<button type="submit" class="btn btn-primary">Create Topic</button>
+					<button type="reset" class="btn btn-danger">Reset</button>
+				</form>
+
+			</div>
+		</div>
+
+	</div>
+	<!--Down Info-->
+
+
+
+	<div class="downinfo">
+
+		<div id="col-1" class="text-center">
+
+			<h3>Why ASA</h3>
+			<ul>
+				<li>All study material in one place</li>
+				<br />
+				<li>Open for all</li>
+				<br />
+				<li>Exam, Assignment, academic notices... all study materials</li>
+			</ul>
+
+
+		</div>
+
+		<div id="col-2" class="text-center">
+
+			<h3>More at ASA</h3>
+			<ul>
+				<li>Important Blogs of Teachers</li>
+				<br />
+				<li>All Useful Links</li>
+			</ul>
+
+
+		</div>
+
+		<div class="col-3">
+			<h3>Contact Us</h3>
+			<ul>
+				<li><span>Email :</span> asa@gmail.com</li>
+				<br />
+				<li><span>Phone :</span> 01673304886</li>
+			</ul>
+		</div>
+	</div>
+
+
+
+
+	<!--FOOTER START -->
+
+	<div class="footer">
+
+		<footer>
+			<div id="f1">
+				Aust Student Assistance 2017 &copy; All right reserved.
+			</div>
+
+			<a href="#" class="fa fa-facebook"></a>
+			<a href="#" class="fa fa-twitter"></a>
+			<a href="#" class="fa fa-google"></a>
+			<a href="#" class="fa fa-linkedin"></a>
+			<a href="#" class="fa fa-youtube"></a>
+		</footer>
+
+	</div>
+
+</body>
+
+</html>
