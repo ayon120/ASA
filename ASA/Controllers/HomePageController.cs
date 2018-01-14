@@ -78,5 +78,41 @@ namespace ASA.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult homepage(Student s)
+        {
+            if (ModelState.IsValid)
+            {
+                using (ASADatabaseEntities3 dc = new ASADatabaseEntities3())
+                {
+                    dc.Students.Add(s);
+                    dc.SaveChanges();
+                    ModelState.Clear();
+                    s = null;
+                    ViewBag.Message = "Successfully Registration Done";
+                }
+            }
+            return View(s);
+        }
+
+        /*[HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult homepage(Teacher t)
+        {
+            if (ModelState.IsValid)
+            {
+                using (ASADatabaseEntities3 dc = new ASADatabaseEntities3())
+                {
+                    dc.Teachers.Add(t);
+                    dc.SaveChanges();
+                    ModelState.Clear();
+                    t = null;
+                    ViewBag.Message = "Successfully Registration Done";
+                }
+            }
+            return View(t);
+        }*/
     }
 }
